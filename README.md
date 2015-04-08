@@ -9,7 +9,7 @@ DNALC's iPlant foundation API apps
 * dnalc-cuffmerge-stampede-2.1.1u1    @johnfonner
 
 Porting guidelines
-# Deploy to a Lonestar4 clone. Use normal queue
-# Use showArguments where possible
-# Make sure to preserve the original logic and interfaces of the original wrapper scripts
-# Create a test job for each application, including input and output files
+* Deploy to a Lonestar4 clone. Use normal queue
+* Use showArguments where possible
+* Make sure to preserve the original logic and interfaces of the original wrapper scripts
+* Create a test job for each application, including input and output files

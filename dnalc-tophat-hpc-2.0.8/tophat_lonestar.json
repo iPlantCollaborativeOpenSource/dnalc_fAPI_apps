@@ -5,6 +5,7 @@
   "label": "TopHat",
   "defaultQueue": "normal",
   "defaultRequestedTime": "4:00:00",
+  "defaultProcessorsPerNode": 12,
   "shortDescription": "A spliced read mapper for RNA-Seq",
   "executionSystem": "lonestar4.tacc.teragrid.org",
   "executionType": "HPC",
@@ -106,6 +107,7 @@
         ]
       },
       "value": {
+        "default": "",
         "visible": true,
         "required": false
       }
@@ -124,9 +126,8 @@
         ]
       },
       "value": {
-        "default": "200",
+        "default": 200,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -143,9 +144,8 @@
         ]
       },
       "value": {
-        "default": "25",
+        "default": 25,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -162,9 +162,8 @@
         ]
       },
       "value": {
-        "default": "20",
+        "default": 20,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -181,9 +180,8 @@
         ]
       },
       "value": {
-        "default": "50000",
+        "default": 50000,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -200,7 +198,7 @@
         ]
       },
       "value": {
-        "default": "0.15",
+        "default": 0.15,
         "type": "number",
         "required": true,
         "visible": true
@@ -218,7 +216,7 @@
         ]
       },
       "value": {
-        "default": "2",
+        "default": 2,
         "type": "number",
         "validator": "[1|2]",
         "visible": true,
@@ -237,9 +235,8 @@
         ]
       },
       "value": {
-        "default": "0",
+        "default": 0,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -256,9 +253,8 @@
         ]
       },
       "value": {
-        "default": "2",
+        "default": 2,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -275,9 +271,8 @@
         ]
       },
       "value": {
-        "default": "70",
+        "default": 70,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -294,9 +289,8 @@
         ]
       },
       "value": {
-        "default": "8",
+        "default": 8,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -313,9 +307,8 @@
         ]
       },
       "value": {
-        "default": "3",
+        "default": 3,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -370,9 +363,8 @@
         ]
       },
       "value": {
-        "default": "20",
+        "default": 20,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }
@@ -389,9 +381,8 @@
         ]
       },
       "value": {
-        "default": "3",
+        "default": 3,
         "type": "number",
-        "validator": "\\d++",
         "required": true,
         "visible": true
       }

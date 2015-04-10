@@ -17,6 +17,6 @@ f651c4e2a391d014226dadc279096f4
 
 files-upload -F dnalc-tophat-hpc-2.0.8 vaughn/applications
 
-
+apps-addupdate -F dnalc-tophat-hpc-2.0.8/tophat_lonestar.json
 
 ```

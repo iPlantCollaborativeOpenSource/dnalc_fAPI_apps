@@ -1,8 +1,0 @@
-tophat_out/
-*.fastq
-*.bt2
-*.gtf
-*.gff
-*.fa
-*-testing.sh
-tophat.stderr

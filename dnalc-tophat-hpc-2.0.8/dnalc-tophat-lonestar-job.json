@@ -7,11 +7,11 @@
   "memoryPerNode": "1GB",
   "nodeCount": 1,
   "processorsPerNode": 12,
-  "archive": true,
+  "archive": false,
   "archiveSystem": "data.iplantcollaborative.org",
   "archivePath": null,
   "inputs": {
-    "genome": "shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+    "genome": "vaughn/genome.tar",
     "query1": "shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep1.fastq",
     "annotation": "shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
   },

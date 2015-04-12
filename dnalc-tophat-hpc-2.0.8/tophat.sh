@@ -47,7 +47,6 @@ date1=$(date +"%s")
 
 tar xzf bin.tgz
 chmod -R a+x bin/*
-
 export CWD=${PWD}
 export PATH="${CWD}/bin:${PATH}"
 
@@ -59,19 +58,27 @@ if [[ $THREADS == 0 ]]; then
     export THREADS=4
 fi
 
+
+# untar reference bundle
+tar -xvf ${GENOME}
+ref=`echo "$GENOME" | sed 's/.tar//g'`
+GENOME_F=${ref}.fa
+# This is to work around Bowtie silliness
+ln -s $GENOME_F ${GENOME_F}.fa;
+
 # Reference sequence...
-GENOME_F=$(basename ${GENOME})
+#GENOME_F=$(basename ${GENOME})
 
 # Quick sanity check before committing to do anything compute intensive
 if ! [ -e $GENOME_F ]; then echo "Error: Genome sequence not found."; exit 1; fi
 
 # If genome file didn't end with .fa then create a symlink that adds it
-if [[ $GENOME_F =~ \.fa$ ]]; then
-    echo "working on genome: $GENOME_F"
-else
-    ln -s $GENOME_F ${GENOME_F}.fa;
-    echo "Created symbolic link () to $GENOME_F";
-fi
+#if [[ $GENOME_F =~ \.fa$ ]]; then
+#    echo "working on genome: $GENOME_F"
+#else
+#    ln -s $GENOME_F ${GENOME_F}.fa;
+#    echo "Created symbolic link () to $GENOME_F";
+#fi
 
 #for J in 1.bt2 2.bt2 3.bt2 4.bt2 rev.1.bt2 rev.2.bt2
 #do
@@ -84,8 +91,8 @@ fi
 #if ! [[ "$index_files" = "6" ]];then
 
 # For the initial Agave port, we will always index the reference genome. There is a better way but need to coordinate with Cornel
-echoerr "I am building bowtie2 indices here"
-bowtie2-build -q $GENOME_F $GENOME_F
+# echoerr "I am building bowtie2 indices here"
+# bowtie2-build -q $GENOME_F $GENOME_F
 
 #fi
 
@@ -228,8 +235,8 @@ mv "$output_dir/accepted_hits_sorted.bam.bai" "$output_dir/${realName}-${JOB}.ba
 rm "$output_dir/accepted_hits.bam"
 
 # Cleanup
-rm -f *.fa *.bt2 $GTF_F $QUERY1_F $QUERY2_F $GENOME_F $GTF_F
 rm -rfv tmp bin
+rm -rfv ${GENOME} ${GENOME_F}* $GTF_F *.fa *.bt2 $QUERY1_F $QUERY2_F
 
 # Final steps
 find tophat_out/ -maxdepth 1 -type f -exec md5sum {} \; > "$output_dir/MD5SUM.txt"

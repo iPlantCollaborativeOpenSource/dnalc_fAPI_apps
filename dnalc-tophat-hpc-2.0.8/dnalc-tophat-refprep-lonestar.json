@@ -33,7 +33,7 @@
  "inputs":[
    {"id":"referenceFasta",
      "value":
-        {"default":"",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
          "order":0,
          "required":true,
          "visible":true},

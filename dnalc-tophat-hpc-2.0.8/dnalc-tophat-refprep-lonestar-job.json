@@ -1,0 +1,15 @@
+{
+  "name": "dnalc-tophat-refprep-01",
+  "maxRunTime": "01:00:00",
+  "memoryPerNode": "1GB",
+  "nodeCount": 1,
+  "processorsPerNode": 12,
+  "appId": "dnalc-tophat-refprep-lonestar-2.0.8",
+  "archive": true,
+  "inputs": {
+    "referenceFasta": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas"
+  },
+  "parameter": {
+    "cleanupParameter": true
+  }
+}

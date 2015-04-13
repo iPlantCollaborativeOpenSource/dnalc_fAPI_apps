@@ -11,9 +11,9 @@
   "archiveSystem": "data.iplantcollaborative.org",
   "archivePath": null,
   "inputs": {
-    "genome": "vaughn/genome.tar",
-    "query1": "shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep1.fastq",
-    "annotation": "shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
+    "genome": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.tar",
+    "query1": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep1.fastq",
+    "annotation": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
   },
   "parameters": {
     "max_deletion_length": 3,
@@ -37,16 +37,6 @@
       "url":"http://requestbin.agaveapi.co/13twte71?job_id=${JOB_ID}&status=${JOB_STATUS}",
       "event":"*",
       "persistent":true
-    },
-    {
-      "url":"vaughn@tacc.utexas.edu",
-      "event":"FINISHED",
-      "persistent":false
-    },
-    {
-      "url":"vaughn@tacc.utexas.edu",
-      "event":"FAILED",
-      "persistent":false
     }
   ]
 }

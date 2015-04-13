@@ -1,6 +1,6 @@
 {
   "name": "dnalc-tophat-lonestar",
-  "version": "2.0.8",
+  "version": "2.0.11.1",
   "helpURI": "http://tophat.cbcb.umd.edu/",
   "label": "DNASubway TopHat",
   "defaultQueue": "normal",
@@ -10,7 +10,7 @@
   "executionSystem": "lonestar4.tacc.teragrid.org",
   "executionType": "HPC",
   "parallelism": "SERIAL",
-  "deploymentPath": "vaughn/applications/dnalc-tophat-hpc-2.0.8",
+  "deploymentPath": "vaughn/applications/dnalc-tophat-hpc-2.0.11.1",
   "deploymentSystem": "data.iplantcollaborative.org",
   "templatePath": "tophat.sh",
   "testPath": "library/test.sh",

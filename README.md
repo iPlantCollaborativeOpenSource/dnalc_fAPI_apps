@@ -12,6 +12,8 @@ DNALC's iPlant foundation API apps
 
 # New app names
 ------------------
+* dnalc-tophat-refprep-lonestar-2.0.11.1
+* dnalc-tophat-lonestar-2.0.11.1
 
 Porting guidelines
 ------------------

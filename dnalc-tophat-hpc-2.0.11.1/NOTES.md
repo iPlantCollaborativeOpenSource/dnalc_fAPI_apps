@@ -18,10 +18,10 @@ API password:
 Token for iplantc.org:vaughn successfully refreshed and cached for 14400 seconds
 f651c4e2a391d014226dadc279096f4
 
-files-upload -F dnalc-tophat-hpc-2.0.8 vaughn/applications
+files-upload -F dnalc-tophat-hpc-2.0.11.1 vaughn/applications
 
-apps-addupdate -F dnalc-tophat-hpc-2.0.8/tophat_lonestar.json
-Successfully added app dnalc-tophat-lonestar-2.0.8
+apps-addupdate -F dnalc-tophat-hpc-2.0.11.1/tophat_lonestar.json
+Successfully added app dnalc-tophat-lonestar-2.0.11.1
 
 jobs-submit -F dnalc-tophat-lonestar-job.json -W
 jobs-history -v 0001428683795837-5056a550b8-0001-007

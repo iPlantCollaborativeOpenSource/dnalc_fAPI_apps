@@ -1,6 +1,6 @@
 {
   "name":"dnalc-tophat-01",
-  "appId": "dnalc-tophat-lonestar-2.0.8",
+  "appId": "dnalc-tophat-lonestar-2.0.11.1",
   "batchQueue": "normal",
   "executionSystem": "lonestar4.tacc.teragrid.org",
   "maxRunTime": "01:00:00",

@@ -5,7 +5,7 @@
  "defaultMaxRunTime":"07:59:00",
  "defaultNodeCount":1,
  "defaultQueue":"normal",
- "deploymentPath":"vaughn/applications/dnalc-tophat-hpc-2.0.8",
+ "deploymentPath":"vaughn/applications/dnalc-tophat-hpc-2.0.11.1",
  "deploymentSystem":"data.iplantcollaborative.org",
  "executionSystem":"lonestar4.tacc.teragrid.org",
  "executionType":"HPC",
@@ -29,7 +29,7 @@
     "greenline"],
  "templatePath":"tophat-refprep.sh",
  "testPath":"tophat-refprep.sh",
- "version":"2.0.8",
+ "version":"2.0.11.1",
  "inputs":[
    {"id":"referenceFasta",
      "value":

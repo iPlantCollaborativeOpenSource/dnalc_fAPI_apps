@@ -233,7 +233,7 @@ elif [[ "${compatibleHitsNorm}" ]]; then OPTIONS="${OPTIONS} --compatible-hits-n
 if   [[ "${poissonDispersion}"  ]]; then OPTIONS="${OPTIONS} --dispersion-method poisson"; fi
 
 # Parameter OPTIONS
-# JFM note: these next few line can't be working as intended.
+# JMF note: these next few line can't be working as intended.
 if [[ -z ${FRAGLENMEAN} ]]; then
     OPTIONS="${OPTIONS} --frag-len-mean ${FRAGLENMEAN}"
 fi

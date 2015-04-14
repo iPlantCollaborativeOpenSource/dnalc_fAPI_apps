@@ -46,8 +46,8 @@ THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
 MANIFEST='manifest.txt'
 touch $MANIFEST
 
-MERGED=
-for i in $(seq 0 1 12)
+MERGED=""
+for i in $(seq 0 12)
 do
     echoerr $i
     file=${queries[$i]}

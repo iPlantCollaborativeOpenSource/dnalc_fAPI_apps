@@ -19,7 +19,8 @@ mv ${ref} ${rb}.fa
 ref=${rb}.fa
 
 gzip_output=1
-if [ ${gzip_output} = 1 ]; then compress_flag="z"; else compress_flag=""; fi
+archive_extension=".tar"
+if [ ${gzip_output} = 1 ]; then compress_flag="z"; archive_extension=".tgz"; else compress_flag=""; fi
 
 # Bowtie is bundled with this application
 tar xzf bin.tgz
@@ -32,7 +33,7 @@ bowtie2-build -q ${ref} ${ref}
 
 java -Xmx3g -jar $TACC_PICARD_DIR/CreateSequenceDictionary.jar R= ${ref} O= ${rb}.dict
 chmod a+rw ${ref}*
-tar -c${compress_flag}f ${rb}.tar ${ref} ${ref}.fai ${rb}.dict ${ref}.1.bt2 ${ref}.2.bt2 ${ref}.3.bt2 ${ref}.4.bt2 ${ref}.rev.1.bt2 ${ref}.rev.2.bt2
+tar -c${compress_flag}f ${rb}.${archive_extension} ${ref} ${ref}.fai ${rb}.dict ${ref}.1.bt2 ${ref}.2.bt2 ${ref}.3.bt2 ${ref}.4.bt2 ${ref}.rev.1.bt2 ${ref}.rev.2.bt2
 
 if [ ${cleanupParameter} ]; then echo "Cleaning up input and intermediate files"
 	rm ${ref}; rm ${ref}.fai; rm ${rb}.dict

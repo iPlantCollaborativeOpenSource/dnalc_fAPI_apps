@@ -58,44 +58,16 @@ if [[ $THREADS == 0 ]]; then
     export THREADS=4
 fi
 
-
 # untar reference bundle
 tar -xvf ${GENOME}
-ref=`echo "$GENOME" | sed 's/.tar//g'`
+# Handle both tgz and tar archives, albeit a touch inelegantly
+ref=`echo "$GENOME" | sed 's/.tgz//g' | sed 's/.tar//g'`
 GENOME_F=${ref}.fa
-# This is to work around Bowtie silliness
+# This is to work around Bowtie silliness. .fas is a valid extension for Fasta files!!!
 ln -s $GENOME_F ${GENOME_F}.fa;
-
-# Reference sequence...
-#GENOME_F=$(basename ${GENOME})
 
 # Quick sanity check before committing to do anything compute intensive
 if ! [ -e $GENOME_F ]; then echo "Error: Genome sequence not found."; exit 1; fi
-
-# If genome file didn't end with .fa then create a symlink that adds it
-#if [[ $GENOME_F =~ \.fa$ ]]; then
-#    echo "working on genome: $GENOME_F"
-#else
-#    ln -s $GENOME_F ${GENOME_F}.fa;
-#    echo "Created symbolic link () to $GENOME_F";
-#fi
-
-#for J in 1.bt2 2.bt2 3.bt2 4.bt2 rev.1.bt2 rev.2.bt2
-#do
-#    echoerr "I am grabbing ${GENOME}.${J}"
-#   iget -f "${GENOME}.${J}" .
-#done
-
-#index_files=$(ls *.bt2 2>/dev/null|wc -l)
-#echoerr "INDEX FILES $index_files"
-#if ! [[ "$index_files" = "6" ]];then
-
-# For the initial Agave port, we will always index the reference genome. There is a better way but need to coordinate with Cornel
-# echoerr "I am building bowtie2 indices here"
-# bowtie2-build -q $GENOME_F $GENOME_F
-
-#fi
-
 
 # Determine pair-end or not
 PE=0

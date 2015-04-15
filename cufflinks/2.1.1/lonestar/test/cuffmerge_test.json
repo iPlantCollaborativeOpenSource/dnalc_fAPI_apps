@@ -1,0 +1,21 @@
+{
+  "name":"cuffmerge-lonestar-test",
+  "appId": "atrivedi-dnalc-cuffmerge-lonestar-2.1.1",
+  "batchQueue": "normal",
+  "executionSystem": "lonestar4-04142015-2354-atrivedi",
+  "maxRunTime": "01:00:00",
+  "memoryPerNode": "1GB",
+  "nodeCount": 1,
+  "processorsPerNode": 12,
+  "archive": false,
+  "archiveSystem": "data.iplantcollaborative.org",
+  "archivePath": null,
+  "inputs": {
+    "ref_seq": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+    "query1": "/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep1.fastq"
+  },
+  "parameters": {
+    "jobName": "cuffmerge",
+    "description": ""
+  }
+}

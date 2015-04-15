@@ -37,7 +37,6 @@ export CWD=${PWD}
 export PATH="${PATH}:${CWD}/bin"
 
 seq=$(basename $genome)
-iget -fT $genome
 
 # Number of CPUs available for threading
 THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
@@ -53,7 +52,6 @@ do
     file=${queries[$i]}
     if [[ -n $file ]]; then
 	infile=$(basename $file)
-	iget -fT $file
 	if [[ -s $infile ]]; then
 	    echo $infile >> $MANIFEST
 	    MERGED="$MERGED $infile" 

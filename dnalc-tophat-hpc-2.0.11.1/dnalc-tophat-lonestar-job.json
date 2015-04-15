@@ -11,7 +11,7 @@
   "archiveSystem": "data.iplantcollaborative.org",
   "archivePath": null,
   "inputs": {
-    "genome": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.tar",
+    "genome": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.tgz",
     "query1": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep1.fastq",
     "annotation": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
   },

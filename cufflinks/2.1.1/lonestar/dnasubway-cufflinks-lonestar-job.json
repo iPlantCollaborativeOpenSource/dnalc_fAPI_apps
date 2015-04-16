@@ -1,0 +1,25 @@
+{
+  "name": "dnasubway-cufflinks-02",
+  "appId": "dnasubway-cufflinks-lonestar-2.1.1",
+  "maxRunTime": "01:00:00",
+  "archive": true,
+  "inputs": {
+    "query1": "/shared/iplant_training/rna-seq_tuxedo/B_cufflinks/WT_rep1.bam",
+    "BIAS_FASTA": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+    "annotation": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
+  },
+  "parameter": {
+    "maxBundleLength": 3500000,
+    "minFragsPerTransfrag": 10,
+    "trim3dropoffFrac": 0.1,
+    "jobName": "tophat",
+    "overhangTolerance": 10,
+    "preMrnaFraction": 0.15,
+    "trim3avgcovThresh": 10,
+    "smallAnchorFraction": 0.09,
+    "minIsoformFraction": 0.1,
+    "maxIntronLength": 300000,
+    "minIntronLength": 50,
+    "libraryType": "fr-unstranded"
+  }
+}

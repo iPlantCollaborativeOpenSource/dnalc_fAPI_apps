@@ -1,9 +1,9 @@
 {
-    "name": "dnalc-cufflinks-lonestar",
+    "name": "dnasubway-cufflinks-lonestar",
     "parallelism": "serial",
     "version": "2.1.1",
     "helpURI": "http://cufflinks.cbcb.umd.edu/",
-    "label": "CuffLinks",
+    "label": "DNASubway CuffLinks",
     "shortDescription": "Transcript assembly and basic quantitation for RNA-Seq",
     "longDescription": "",
     "author": "John Fonner",
@@ -15,16 +15,19 @@
     "ontology": [
         "http://sswap.info/iPlant/FoundationalAPI"
     ],
-    "executionSystem": "stampede-fonner",
+    "executionSystem": "lonestar4.tacc.teragrid.org",
     "executionType": "HPC",
     "deploymentPath": "jfonner/applications/dnalc/cufflinks/2.1.1/lonestar",
     "templatePath": "cufflinks.sh",
     "testPath": "test/test.sh",
     "checkpointable": false,
+    "defaultMaxRunTime" : "22:00:00",
+    "defaultNodeCount": 1,
+    "defaultProcessorsPerNode": 12,
+    "defaultQueue": "normal",
     "modules": [
         "purge",
         "load TACC",
-        "load iRODS",
         "load samtools"
     ],
     "inputs": [
@@ -54,7 +57,7 @@
         {
             "id": "annotation",
             "value": {
-                "default": "",
+                "default": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf",
                 "validator": "",
                 "required": true,
                 "visible": true

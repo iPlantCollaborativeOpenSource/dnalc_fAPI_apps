@@ -13,7 +13,7 @@ output_dir="./cuffmerge_out"
 echoerr() { echo "$@" 1>&2; }
 
 # The reference genome sequence
-genome=${ref_seq}
+seq=${ref_seq}
 
 JOB=${jobName}
 
@@ -36,8 +36,6 @@ tar xzf bin.tgz
 export CWD=${PWD}
 export PATH="${PATH}:${CWD}/bin"
 
-seq=$(basename $genome)
-
 # Number of CPUs available for threading
 THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
 
@@ -46,20 +44,16 @@ MANIFEST='manifest.txt'
 touch $MANIFEST
 
 MERGED=""
-for i in $(seq 0 12)
+for i in $(seq 0 11)
 do
     echoerr $i
     file=${queries[$i]}
-    if [[ -n $file ]]; then
-	infile=$(basename $file)
-	if [[ -s $infile ]]; then
-	    echo $infile >> $MANIFEST
-	    MERGED="$MERGED $infile" 
-	    echoerr $infile
-	fi
+    if [[ -e $file ]]; then
+	    echo $file >> $MANIFEST
+	    MERGED="$MERGED $file" 
+	    echoerr $file
     fi
 done
-
 
 echoerr "Inspecting list of GTF files to merge..."
 lines=$(cat $MANIFEST | wc -l)
@@ -71,22 +65,21 @@ if ! [[ "$unique" -eq "$lines" ]]; then
     exit 1
 fi
 # Check for > 2 files to merge
-if ! [[ $unique -ge 2 ]]; then
+if [[ $unique -lt 2 ]]; then
     echoerr "Error: at least two GTF files are required for merging"
     exit 1
 fi
 
-if [[ -n $lines ]]; then
-  ARGS="-p $THREADS -o $output_dir -s $seq $MANIFEST";
-  echoerr "Executing cuffmerge ${ARGS}..."
-  cuffmerge $ARGS
+ARGS="-p $THREADS -o $output_dir -s $seq $MANIFEST";
+echoerr "Executing cuffmerge ${ARGS}..."
+cuffmerge $ARGS
 
-  MERGEDONE=$(ls -alh $output_dir)
-  echoerr "DONE!
-  $MERGEDONE                                                                                                                                                  "
+MERGEDONE=$(ls -alh $output_dir)
+echoerr "DONE!
+$MERGEDONE
+"
 
-  mv $output_dir/merged.gtf $output_dir/${JOB}-merged.gtf
-fi
+mv $output_dir/merged.gtf $output_dir/${JOB}-merged.gtf
 
 echo "Merged Cufflinks transcript files: $MERGED" > $output_dir/description.txt
 
@@ -104,7 +97,6 @@ samtools index $bam.bam
 export PERL5LIB=${CWD}/bin/lib
 gff="${output_dir}/${JOB}-merged.gff"
 cufflinks_gtf2gff3.pl $gtf > $gff
-
 
 # remember to remove cruft
 rm -f *.gtf *.fa* *.tgz *.txt

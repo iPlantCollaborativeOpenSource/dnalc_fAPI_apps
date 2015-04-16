@@ -1,5 +1,5 @@
 {
-    "name": "atrivedi-dnalc-cuffmerge-lonestar",
+    "name": "dnalc-cuffmerge-lonestar",
     "parallelism": "serial",
     "version": "2.1.1",
     "helpURI": "http://cufflinks.cbcb.umd.edu/",
@@ -16,9 +16,9 @@
     "ontology": [
         "http://sswap.info/iPlant/FoundationalAPI"
     ],
-    "executionSystem": "lonestar4-04142015-2354-atrivedi",
+    "executionSystem": "lonestar-fonner",
     "executionType": "HPC",
-    "deploymentPath": "atrivedi/apps/dnalc/cufflinks/2.1.1/lonestar",
+    "deploymentPath": "jfonner/applications/dnalc/cufflinks/2.1.1/lonestar",
     "templatePath": "cuffmerge.sh",
     "testPath": "test/test.sh",
     "checkpointable": false,
@@ -32,7 +32,7 @@
         {
             "id": "ref_seq",
             "value": {
-                "default": "/smckay/cuffdiff_test/genome.fas",
+                "default": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
                 "validator": "",
                 "required": false,
                 "visible": true
@@ -54,7 +54,7 @@
         {
             "id": "query1",
             "value": {
-                "default": "/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/WT_rep1.fastq",
+                "default": "/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep1_transcripts.gtf",
                 "validator": "",
                 "required": false,
                 "visible": true
@@ -76,7 +76,7 @@
         {
             "id": "query2",
             "value": {
-                "default": "",
+                "default": "/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep2_transcripts.gtf",
                 "validator": "",
                 "required": false,
                 "visible": true
@@ -98,7 +98,7 @@
         {
             "id": "query3",
             "value": {
-                "default": "",
+                "default": "/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep1_transcripts.gtf",
                 "validator": "",
                 "required": false,
                 "visible": true
@@ -120,7 +120,7 @@
         {
             "id": "query4",
             "value": {
-                "default": "",
+                "default": "/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep2_transcripts.gtf",
                 "validator": "",
                 "required": false,
                 "visible": true

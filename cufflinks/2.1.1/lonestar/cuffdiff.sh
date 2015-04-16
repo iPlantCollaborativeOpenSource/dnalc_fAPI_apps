@@ -166,7 +166,7 @@ mkdir ./tmp
 
 # Fetch alignment files
 if [[ -e "$SAM1_F1" ]]; then SAM1_F=$SAM1_F1; echo "$SAM1_F found"
-else; echoerr "$SAM1_F is missing! Abort!"; exit 1; fi
+else echoerr "$SAM1_F is missing! Abort!"; exit 1; fi
 
 if [[ -n $SAM1_F2 ]]; then SAM1_F="$SAM1_F,$SAM1_F2"; fi
 if [[ -n $SAM1_F3 ]]; then SAM1_F="$SAM1_F,$SAM1_F3"; fi
@@ -271,11 +271,9 @@ echoerr "Done!"
 echoerr "Sorting output data...
 "
 # get the biomart annotations
-PATH_TO_ANNOTATIONS="/iplant/home/shared/iplant_DNA_subway/genomes/${species}/${species}.txt"
-ANN_EXISTS=$(ils $PATH_TO_ANNOTATIONS)
-if [[ -n $ANN_EXISTS ]]; then
+wget https://agave.iplantc.org/files/v2/download/jfonner/system/data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/${species}/${species}.txt
+if [[ -e ${species}.txt ]]; then
         echoerr "BioMart annotations exist, grabbing them, then running cuffdiff_sort.pl"
-        iget -fT $PATH_TO_ANNOTATIONS
         cuffdiff_sort.pl $PWD $LABELS ${species}
 else
         echoerr "BioMart annotations do not exist, running cuffdiff_sort.pl without them"

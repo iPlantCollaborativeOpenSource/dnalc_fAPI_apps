@@ -1,9 +1,9 @@
 {
-  "name":"cuffmerge-lonestar-test",
-  "appId": "atrivedi-dnalc-cuffmerge-lonestar-2.1.1",
+  "name":"dnalc-cuffmerge-test",
+  "appId": "dnalc-cuffmerge-lonestar-2.1.1",
   "batchQueue": "normal",
-  "executionSystem": "lonestar4-04142015-2354-atrivedi",
-  "maxRunTime": "01:00:00",
+  "executionSystem": "lonestar-fonner",
+  "maxRunTime": "04:00:00",
   "memoryPerNode": "1GB",
   "nodeCount": 1,
   "processorsPerNode": 12,

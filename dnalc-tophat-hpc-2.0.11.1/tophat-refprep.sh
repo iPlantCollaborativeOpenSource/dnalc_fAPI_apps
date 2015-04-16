@@ -19,8 +19,8 @@ mv ${ref} ${rb}.fa
 ref=${rb}.fa
 
 gzip_output=1
-archive_extension=".tar"
-if [ ${gzip_output} = 1 ]; then compress_flag="z"; archive_extension=".tgz"; else compress_flag=""; fi
+archive_extension="tar"
+if [ ${gzip_output} = 1 ]; then compress_flag="z"; archive_extension="tgz"; else compress_flag=""; fi
 
 # Bowtie is bundled with this application
 tar xzf bin.tgz

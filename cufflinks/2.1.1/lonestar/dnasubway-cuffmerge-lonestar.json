@@ -22,7 +22,7 @@
  "inputs":[
     {"id":"ref_seq",
      "value":
-        {"default":"shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
          "validator":"",
          "required":false,
          "visible":true},
@@ -35,7 +35,7 @@
          "fileTypes":["FASTA-0"]}},
     {"id":"query1",
      "value":
-        {"default":"shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep1_transcripts.gtf",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep1_transcripts.gtf",
          "validator":"",
          "required":false,
          "visible":true},
@@ -48,7 +48,7 @@
          "fileTypes":["GTF-2.2"]}},
     {"id":"query2",
      "value":
-        {"default":"shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep2_transcripts.gtf",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/WT_rep2_transcripts.gtf",
          "validator":"",
          "required":false,
          "visible":true},
@@ -61,7 +61,7 @@
          "fileTypes":["GTF-2.2"]}},
     {"id":"query3",
      "value":
-        {"default":"shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep1_transcripts.gtf",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep1_transcripts.gtf",
          "validator":"",
          "required":false,
          "visible":true},
@@ -74,7 +74,7 @@
          "fileTypes":["GTF-2.2"]}},
     {"id":"query4",
      "value":
-        {"default":"shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep2_transcripts.gtf",
+        {"default":"agave://data.iplantcollaborative.org/shared/iplant_training/rna-seq_tuxedo/C_cuffmerge/hy5_rep2_transcripts.gtf",
          "validator":"",
          "required":false,
          "visible":true},

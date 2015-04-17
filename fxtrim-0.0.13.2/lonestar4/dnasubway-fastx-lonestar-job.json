@@ -1,0 +1,26 @@
+{
+  "name":"dnasubway-fastx-lonestar-test1",
+  "appId": "dnasubway-fastx-lonestar-0.0.13.2.0",
+  "batchQueue": "normal",
+  "maxRunTime": "02:00:00",
+  "archive": false,
+  "archiveSystem": "data.iplantcollaborative.org",
+  "inputs": {
+    "seq1": "agave://data.iplantcollaborative.org/shared/iplantcollaborative/example_data/tophat/athaliana_rna.fq"
+  },
+  "parameters": {
+    "jobName": "tophat",
+    "min_quality": 20,
+    "quality_threshold": 20,
+    "percent_bases": 50,
+    "min_length": 20,
+    "perform_indexing": 0
+  },
+  "notifications": [
+    {
+      "url":"http://requestbin.agaveapi.co/1jqkptm1?job_id=${JOB_ID}&status=${JOB_STATUS}",
+      "event":"*",
+      "persistent":true
+    }
+  ]
+}

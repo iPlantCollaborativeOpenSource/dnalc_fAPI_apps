@@ -7,7 +7,7 @@
  "longDescription":"",
  "author":"John Fonner",
  "tags":["next-gen","assembly","rnaseq"],
- "ontology":["http://sswap.info/iPlant/FoundationalAPI"],
+ "ontology":["http://sswapmeet.sswap.info/agave/apps/Application"],
  "executionSystem":"dnalc.lonestar.tacc.utexas.edu",
  "executionType":"HPC",
  "deploymentPath":"jfonner/applications/dnalc/cufflinks/2.1.1/lonestar",

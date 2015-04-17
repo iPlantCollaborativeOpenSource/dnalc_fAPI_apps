@@ -12,8 +12,13 @@ DNALC's iPlant foundation API apps
 
 # New app names
 ------------------
-* dnalc-tophat-refprep-lonestar-2.0.11.1
-* dnalc-tophat-lonestar-2.0.11.1
+* dnasubway-fastqc-lonestar-0.11.2.0
+* dnasubway-fastx-lonestar-0.0.13.2.0
+* dnasubway-tophat-refprep-lonestar-2.0.11.1
+* dnasubway-tophat-lonestar-2.0.11.1
+* dnasubway-cufflinks-lonestar-2.1.1
+* dnasubway-cuffdiff-lonestar-2.1.1
+* dnasubway-cuffmerge-lonestar-2.1.1
 
 Porting guidelines
 ------------------

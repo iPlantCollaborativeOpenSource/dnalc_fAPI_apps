@@ -17,7 +17,7 @@
     "shortDescription": "FASTX TOOLKIT short-read pre-processing tools",
     "longDescription": "",
     "author": "Cornel Ghiban; LS4 port by James Carson",
-    "parallelism": "serial",
+    "parallelism": "SERIAL",
     "templatePath": "fastx.template",
     "testPath": "test-fastx.sh",
     "tags": [ "next-gen", "quality", "rnaseq" ],

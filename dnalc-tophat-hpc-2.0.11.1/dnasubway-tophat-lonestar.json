@@ -1,10 +1,11 @@
 {
-  "name": "dnalc-tophat-lonestar",
+  "name": "dnasubway-tophat-lonestar",
   "version": "2.0.11.1",
   "helpURI": "http://tophat.cbcb.umd.edu/",
   "label": "DNASubway TopHat",
   "defaultQueue": "normal",
   "defaultMaxRunTime": "06:00:00",
+  "defaultNodeCount":1,
    "defaultProcessorsPerNode":12,
   "shortDescription": "A spliced read mapper for RNA-Seq",
   "executionSystem": "dnalc.lonestar.tacc.utexas.edu",
@@ -89,7 +90,7 @@
         ]
       },
       "value": {
-        "default": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.tar",
+        "default": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.tgz",
         "required": true,
         "visible": true,
         "order":0

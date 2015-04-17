@@ -1,6 +1,6 @@
 {
-  "name":"dnalc-tophat-01",
-  "appId": "dnalc-tophat-lonestar-2.0.11.1",
+  "name":"dnasubway-tophat-test1",
+  "appId": "dnasubway-tophat-lonestar-2.0.11.1",
   "batchQueue": "normal",
   "maxRunTime": "01:00:00",
   "archive": false,

@@ -1,29 +1,27 @@
 {
-  "name": "jcarson-dnalc-fastqc-lonestar4",
-  "label": "FastQC",
+  "name": "dnasubway-fastqc-lonestar",
+  "label": "DNASubway FastQC",
   "version": "0.11.2.0",
   "helpURI": "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/",
   "defaultQueue": "normal",
   "defaultNodeCount": 1,
   "defaultProcessorsPerNode": 12,
-  "defaultMemoryPerNode":24,
-  "defaultRequestedTime": "01:00:00",
+  "defaultRequestedTime": "02:00:00",
   "available":true,
   "checkpointable":false,
   "executionType": "HPC",
-  "executionSystem": "lonestar4-04242014-1023-jcarson",
+  "executionSystem": "dnalc.lonestar.tacc.utexas.edu",
   "parallelism": "SERIAL",
   "deploymentPath": "jcarson/applications/fastqc-0.11.2/lonestar4",
   "deploymentSystem": "data.iplantcollaborative.org",
   "shortDescription": "A Quality Control application for FastQ files",
-  "author": "Cornel Ghiban; ls4 port by James Carson",
-  "datePublished": "April 15, 2015",
+  "author": "Cornel Ghiban; LS4 port by James Carson",
   "templatePath": "fastqc.template",
   "testPath": "test-fastqc.sh",
   "tags": ["next-gen"],
-  "ontology": ["http://sswap.info/iPlant/FoundationalAPI"],
+  "ontology":["http://sswapmeet.sswap.info/agave/apps/Application"],
   "checkpointable": false,
-  "modules": [ "purge", "load TACC", "java64/1.7.0" ],
+  "modules": [ "purge", "load TACC", "load java64/1.7.0" ],
   "inputs": [
     {
       "id": "input",
@@ -41,8 +39,7 @@
         ]
       },
       "value": {
-        "default": "/shared/iplantcollaborative/example_data/fastqc/SRR070572_hy5.fastq",
-        "default": "",
+        "default": "agave://data.iplantcollaborative.org/shared/iplantcollaborative/example_data/fastqc/SRR070572_hy5.fastq",
         "required": true,
         "visible": true
       }

@@ -6,7 +6,7 @@
   "archive": false,
   "archiveSystem": "data.iplantcollaborative.org",
   "inputs": {
-    "seq1": "agave://data.iplantcollaborative.org/shared/iplantcollaborative/example_data/tophat/athaliana_rna.fq"
+    "seq1": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep2.fastq"
   },
   "parameters": {
     "jobName": "tophat",

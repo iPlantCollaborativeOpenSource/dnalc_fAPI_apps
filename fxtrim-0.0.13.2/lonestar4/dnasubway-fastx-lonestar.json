@@ -30,7 +30,7 @@
         {
             "id": "seq1",
             "value": {
-                "default": "agave://data.iplantcollaborative.org/shared/iplantcollaborative/example_data/tophat/athaliana_rna.fq",
+                "default": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/sample_data/fastq/arabidopsis_thaliana/single_end/WT_rep2.fastq",
                 "validator": "",
                 "required": true,
                 "visible": true

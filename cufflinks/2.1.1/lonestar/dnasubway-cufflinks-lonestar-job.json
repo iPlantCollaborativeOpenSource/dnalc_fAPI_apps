@@ -1,12 +1,12 @@
 {
-  "name": "dnasubway-cufflinks-02",
+  "name": "dnasubway-cufflinks-test1",
   "appId": "dnasubway-cufflinks-lonestar-2.1.1",
   "maxRunTime": "01:00:00",
   "archive": true,
   "inputs": {
-    "query1": "/shared/iplant_training/rna-seq_tuxedo/B_cufflinks/WT_rep1.bam",
-    "BIAS_FASTA": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
-    "annotation": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
+    "query1": "agave://data.iplantcollaborative.org/shared/iplant_training/rna-seq_tuxedo/B_cufflinks/WT_rep1.bam",
+    "BIAS_FASTA": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+    "annotation": "agave://data.iplantcollaborative.org/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf"
   },
   "parameter": {
     "maxBundleLength": 3500000,

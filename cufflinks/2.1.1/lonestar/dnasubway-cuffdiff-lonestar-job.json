@@ -1,15 +1,10 @@
 {
-  "name":"dnalc-cuffdiff-test",
-  "appId": "dnalc-cuffdiff-lonestar-2.1.1",
+  "name":"dnalc-cuffdiff-test1",
+  "appId": "dnasubway-cuffdiff-lonestar-2.1.1",
   "batchQueue": "normal",
-  "executionSystem": "lonestar-fonner",
   "maxRunTime": "04:00:00",
-  "memoryPerNode": "1GB",
-  "nodeCount": 1,
-  "processorsPerNode": 12,
   "archive": false,
   "archiveSystem": "data.iplantcollaborative.org",
-  "archivePath": null,
   "inputs": {
     "query1": "vaughn/dnalc/ghiban/DNASubway/project-389/cl2576/cufflinks_out/WT_rep1-th2552-cl2576.gtf",
     "query2": "vaughn/dnalc/ghiban/DNASubway/project-389/cl2577/cufflinks_out/WT_rep2-th2553-cl2577.gtf",

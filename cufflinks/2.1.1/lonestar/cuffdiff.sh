@@ -92,7 +92,7 @@ if [[ -n $QUERY12 ]]; then echo $QUERY12 >> $MANIFEST; fi
 # Should probably use the $NSLOTS environment variable to calculate thread info if possible
 THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
 
-if [[ $SKIPCUFFMERGE ]]; then
+if [[ $SKIPCUFFMERGE -eq 1 ]]; then
     echoerr "Skipping Cuffmerge"
 else
     echoerr "Inspecting list of GTF files to merge..."
@@ -109,7 +109,7 @@ else
         exit 1
     fi
 
-    if [[ $USEGTF ]]; then
+    if [[ $USEGTF -eq 1 ]]; then
         INCLUDE_REF_GTF=" -g $REFGTF "
         echoerr "Reference GTF being used at Cuffmerge"
     else
@@ -127,7 +127,7 @@ else
     "
 
     ANNOTATION='./cuffmerge_out/merged.gtf'
-    if [[ -e $ANNOTATION ]]; then
+    if [[ ! -e $ANNOTATION ]]; then
         echoerr "No point going on, cuffmerge failed"
         exit 1
     fi
@@ -225,12 +225,12 @@ OPTIONS="--no-update-check --num-threads ${THREADS} --output-dir ${OUTPUT_DIR}"
 OPTIONS="$OPTIONS --library-type ${LIBRARYTYPE} --min-alignment-count ${MINALIGNMENTCOUNT} --labels ${LABELS}"
 
 # Flag  OPTIONS
-if   [[ "${treatAsTimeSeries}"  ]]; then OPTIONS="${OPTIONS} --time-series"              ; fi
-if   [[ "${multiReadCorrect}"   ]]; then OPTIONS="${OPTIONS} --multi-read-correct"       ; fi
-if   [[ "${upperQuartileNorm}"  ]]; then OPTIONS="${OPTIONS} --upper-quartile-norm"      ; fi
-if   [[ "${totalHitsNorm}"      ]]; then OPTIONS="${OPTIONS} --total-hits-norm"
-elif [[ "${compatibleHitsNorm}" ]]; then OPTIONS="${OPTIONS} --compatible-hits-norm"     ; fi
-if   [[ "${poissonDispersion}"  ]]; then OPTIONS="${OPTIONS} --dispersion-method poisson"; fi
+if   [[ "${treatAsTimeSeries}"  -eq 1 ]]; then OPTIONS="${OPTIONS} --time-series"              ; fi
+if   [[ "${multiReadCorrect}"   -eq 1 ]]; then OPTIONS="${OPTIONS} --multi-read-correct"       ; fi
+if   [[ "${upperQuartileNorm}"  -eq 1 ]]; then OPTIONS="${OPTIONS} --upper-quartile-norm"      ; fi
+if   [[ "${totalHitsNorm}"      -eq 1 ]]; then OPTIONS="${OPTIONS} --total-hits-norm"
+elif [[ "${compatibleHitsNorm}" -eq 1 ]]; then OPTIONS="${OPTIONS} --compatible-hits-norm"     ; fi
+if   [[ "${poissonDispersion}"  -eq 1 ]]; then OPTIONS="${OPTIONS} --dispersion-method poisson"; fi
 
 # Parameter OPTIONS
 # JMF note: these next few line can't be working as intended.
@@ -282,5 +282,6 @@ fi
 
 echoerr "Done!"
 
+# rm -fr bin R tmp *.fa *.txt annotations cuffdiff_out/*db
 rm -fr bin R tmp *.gtf *.fa* *.txt *.bam annotations cuffdiff_out/*db
 

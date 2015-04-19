@@ -10,15 +10,15 @@ DNALC's iPlant foundation API apps
 * dnalc-cufflinks-stampede-2.1.1.2u1  @johnfonner
 * dnalc-cuffmerge-stampede-2.1.1u1    @johnfonner
 
-# New app names
+# New app names (public)
 ------------------
-* dnasubway-fastqc-lonestar-0.11.2.0
-* dnasubway-fastx-lonestar-0.0.13.2.0
-* dnasubway-tophat-refprep-lonestar-2.0.11.1
-* dnasubway-tophat-lonestar-2.0.11.1
-* dnasubway-cufflinks-lonestar-2.1.1
-* dnasubway-cuffdiff-lonestar-2.1.1
-* dnasubway-cuffmerge-lonestar-2.1.1
+* dnasubway-fastqc-lonestar-0.11.2.0u1
+* dnasubway-fastx-lonestar-0.0.13.2.0u1
+* dnasubway-tophat-refprep-lonestar-2.0.11.1u1
+* dnasubway-tophat-lonestar-2.0.11.1u1
+* dnasubway-cufflinks-lonestar-2.1.1u1
+* dnasubway-cuffdiff-lonestar-2.1.1u1
+* dnasubway-cuffmerge-lonestar-2.1.1u1
 
 Porting guidelines
 ------------------

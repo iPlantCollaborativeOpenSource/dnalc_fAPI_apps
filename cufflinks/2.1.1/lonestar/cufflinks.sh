@@ -65,7 +65,7 @@ query1_F=${query1}
 
 # Reference GTF (optional)
 #if [[ -n $ANNOTATION ]]; then
-if [[ $GTF ]]; then
+if [[ $GTF -eq 1 ]]; then
     ANNO_F=${ANNOTATION}
     OPTIONS="${OPTIONS} --GTF ${ANNO_F}"
 fi
@@ -75,7 +75,7 @@ if [[ -n $MASK ]]; then
     OPTIONS="${OPTIONS} --mask-file ${MASK_F}"
 fi
 # Guide GTF (optional)
-if [[ $GUIDE ]]; then
+if [[ $GUIDE -eq 1 ]]; then
     ANNO_F=${ANNOTATION}
     OPTIONS="${OPTIONS} --GTF-guide ${ANNO_F}"
 fi
@@ -86,15 +86,15 @@ if [[ -n $BIAS ]]; then
 fi
 
 # Conditional or optional params
-if [[ $multiReadCorrect ]];                     then OPTIONS="${OPTIONS} --multi-read-correct"; fi
-if [[ $upperQuartileNorm ]];                    then OPTIONS="${OPTIONS} --upper-quartile-norm"; fi
-if [[ $compatibleHitsNorm && $GTF ]];           then OPTIONS="${OPTIONS} --compatible-hits-norm"
-elif [[ "$totalHitsNorm" ]];                    then OPTIONS="${OPTIONS} --total-hits-norm"; fi
-if [[ -n $libraryType ]];                       then OPTIONS="${OPTIONS} --library-type ${libraryType}"; fi
-if [[ -n $LABEL ]];                             then OPTIONS="${OPTIONS} --label ${LABEL}"; fi
-if [[ -n $overhangTolerance3 && $GUIDE ]];      then OPTIONS="${OPTIONS} --3-overhang-tolerance ${overhangTolerance3}"; fi
-if [[ -n $intronOverhangTolerance && $GUIDE ]]; then OPTIONS="${OPTIONS} --intron-overhang-tolerance ${intronOverhangTolerance}"; fi
-if [[ $noFauxReads && $GUIDE ]];                then OPTIONS="${OPTIONS} --no-faux-reads"; fi
+if [[ $multiReadCorrect -eq 1 ]];                     then OPTIONS="${OPTIONS} --multi-read-correct"; fi
+if [[ $upperQuartileNorm  -eq 1]];                    then OPTIONS="${OPTIONS} --upper-quartile-norm"; fi
+if [[ $compatibleHitsNorm -eq 1 && $GTF -eq 1 ]];     then OPTIONS="${OPTIONS} --compatible-hits-norm"
+elif [[ $totalHitsNorm -eq 1 ]];                      then OPTIONS="${OPTIONS} --total-hits-norm"; fi
+if [[ -n $libraryType ]];                             then OPTIONS="${OPTIONS} --library-type ${libraryType}"; fi
+if [[ -n $LABEL ]];                                   then OPTIONS="${OPTIONS} --label ${LABEL}"; fi
+if [[ -n $overhangTolerance3 && $GUIDE -eq 1]];       then OPTIONS="${OPTIONS} --3-overhang-tolerance ${overhangTolerance3}"; fi
+if [[ -n $intronOverhangTolerance && $GUIDE -eq 1 ]]; then OPTIONS="${OPTIONS} --intron-overhang-tolerance ${intronOverhangTolerance}"; fi
+if [[ $noFauxReads -eq 1 && $GUIDE -eq 1 ]];          then OPTIONS="${OPTIONS} --no-faux-reads"; fi
 
 echoerr "CUFFLINKS OPTIONS: $OPTIONS $query1_F\n"
 

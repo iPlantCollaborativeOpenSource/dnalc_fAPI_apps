@@ -87,7 +87,7 @@ fi
 
 # Conditional or optional params
 if [[ $multiReadCorrect -eq 1 ]];                     then OPTIONS="${OPTIONS} --multi-read-correct"; fi
-if [[ $upperQuartileNorm  -eq 1]];                    then OPTIONS="${OPTIONS} --upper-quartile-norm"; fi
+if [[ $upperQuartileNorm  -eq 1 ]];                   then OPTIONS="${OPTIONS} --upper-quartile-norm"; fi
 if [[ $compatibleHitsNorm -eq 1 && $GTF -eq 1 ]];     then OPTIONS="${OPTIONS} --compatible-hits-norm"
 elif [[ $totalHitsNorm -eq 1 ]];                      then OPTIONS="${OPTIONS} --total-hits-norm"; fi
 if [[ -n $libraryType ]];                             then OPTIONS="${OPTIONS} --library-type ${libraryType}"; fi

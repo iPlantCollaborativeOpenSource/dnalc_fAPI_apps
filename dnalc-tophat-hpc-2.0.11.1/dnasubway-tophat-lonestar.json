@@ -134,7 +134,7 @@
       "value": {
         "default": 200,
         "type": "number",
-        "required": true,
+        "required": false,
         "visible": true
       }
     },
@@ -170,7 +170,7 @@
       "value": {
         "default": 20,
         "type": "number",
-        "required": true,
+        "required": false,
         "visible": true
       }
     },

@@ -1,6 +1,6 @@
 {
-  "name":"dnasubway-tophat-test1",
-  "appId": "dnasubway-tophat-lonestar-2.0.11.1",
+  "name":"dnasubway-tophat-test2",
+  "appId": "dnasubway-tophat-lonestar-2.0.11.1u2",
   "batchQueue": "normal",
   "maxRunTime": "01:00:00",
   "archive": false,
@@ -19,11 +19,9 @@
     "min_isoform_fraction": 0.15,
     "read_mismatches": 2,
     "max_insertion_length": 3,
-    "mate_std_dev": 20,
     "max_multihits": 20,
     "bowtie_version": 2,
     "min_intron_length": 70,
-    "mate_inner_dist": 200,
     "library_type": "fr-unstranded",
     "max_intron_length": 50000
   },

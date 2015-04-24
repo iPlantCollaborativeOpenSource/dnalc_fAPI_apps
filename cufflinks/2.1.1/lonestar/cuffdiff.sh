@@ -173,49 +173,49 @@ if [[ -n $SAM1_F3 ]]; then SAM1_F="$SAM1_F,$SAM1_F3"; fi
 if [[ -n $SAM1_F4 ]]; then SAM1_F="$SAM1_F,$SAM1_F4"; fi
 echoerr "SAM1 files $SAM1_F"
 
-if [[ -n $SAM2_F1 ]]; then SAM2_F=        "$SAM2_F1"; fi
+if [[ -n $SAM2_F1 ]]; then SAM2_F="$SAM2_F1"        ; fi
 if [[ -n $SAM2_F2 ]]; then SAM2_F="$SAM2_F,$SAM2_F2"; fi
 if [[ -n $SAM2_F3 ]]; then SAM2_F="$SAM2_F,$SAM2_F3"; fi
 if [[ -n $SAM2_F4 ]]; then SAM1_F="$SAM2_F,$SAM2_F4"; fi
 echoerr "SAM2 files $SAM2_F"
 
-if [[ -n $SAM3_F1 ]]; then SAM3_F=        "$SAM3_F1"; fi
+if [[ -n $SAM3_F1 ]]; then SAM3_F="$SAM3_F1"        ; fi
 if [[ -n $SAM3_F2 ]]; then SAM3_F="$SAM3_F,$SAM3_F2"; fi
 if [[ -n $SAM3_F3 ]]; then SAM3_F="$SAM3_F,$SAM3_F3"; fi
 if [[ -n $SAM3_F4 ]]; then SAM3_F="$SAM3_F,$SAM3_F4"; fi
 echoerr "SAM3 Files $SAM3_F"
 
-if [[ -n $SAM4_F1 ]]; then SAM4_F=        "$SAM4_F1"; fi
+if [[ -n $SAM4_F1 ]]; then SAM4_F="$SAM4_F1"        ; fi
 if [[ -n $SAM4_F2 ]]; then SAM4_F="$SAM4_F,$SAM4_F2"; fi
 if [[ -n $SAM4_F3 ]]; then SAM4_F="$SAM4_F,$SAM4_F3"; fi
 if [[ -n $SAM4_F4 ]]; then SAM4_F="$SAM4_F,$SAM4_F4"; fi
 
-if [[ -n $SAM5_F1 ]]; then SAM5_F=        "$SAM5_F1"; fi
+if [[ -n $SAM5_F1 ]]; then SAM5_F="$SAM5_F1"        ; fi
 if [[ -n $SAM5_F2 ]]; then SAM5_F="$SAM5_F,$SAM5_F2"; fi
 if [[ -n $SAM5_F3 ]]; then SAM5_F="$SAM5_F,$SAM5_F3"; fi
 if [[ -n $SAM5_F4 ]]; then SAM5_F="$SAM5_F,$SAM5_F4"; fi
 
-if [[ -n $SAM6_F1 ]]; then SAM6_F=        "$SAM6_F1"; fi
+if [[ -n $SAM6_F1 ]]; then SAM6_F="$SAM6_F1"        ; fi
 if [[ -n $SAM6_F2 ]]; then SAM6_F="$SAM6_F,$SAM6_F2"; fi
 if [[ -n $SAM6_F3 ]]; then SAM6_F="$SAM6_F,$SAM6_F3"; fi
 if [[ -n $SAM6_F4 ]]; then SAM6_F="$SAM6_F,$SAM6_F4"; fi
 
-if [[ -n $SAM7_F1 ]]; then SAM7_F=        "$SAM7_F1"; fi
+if [[ -n $SAM7_F1 ]]; then SAM7_F="$SAM7_F1"        ; fi
 if [[ -n $SAM7_F2 ]]; then SAM7_F="$SAM7_F,$SAM7_F2"; fi
 if [[ -n $SAM7_F3 ]]; then SAM7_F="$SAM7_F,$SAM7_F3"; fi
 if [[ -n $SAM7_F4 ]]; then SAM7_F="$SAM7_F,$SAM7_F4"; fi
 
-if [[ -n $SAM8_F1 ]]; then SAM8_F=        "$SAM8_F1"; fi
+if [[ -n $SAM8_F1 ]]; then SAM8_F="$SAM8_F1"        ; fi
 if [[ -n $SAM8_F2 ]]; then SAM8_F="$SAM8_F,$SAM8_F2"; fi
 if [[ -n $SAM8_F3 ]]; then SAM8_F="$SAM8_F,$SAM8_F3"; fi
 if [[ -n $SAM8_F4 ]]; then SAM8_F="$SAM8_F,$SAM8_F4"; fi
 
-if [[ -n $SAM9_F1 ]]; then SAM9_F=        "$SAM9_F1"; fi
+if [[ -n $SAM9_F1 ]]; then SAM9_F="$SAM9_F1"        ; fi
 if [[ -n $SAM9_F2 ]]; then SAM9_F="$SAM9_F,$SAM9_F2"; fi
 if [[ -n $SAM9_F3 ]]; then SAM9_F="$SAM9_F,$SAM9_F3"; fi
 if [[ -n $SAM9_F4 ]]; then SAM9_F="$SAM9_F,$SAM9_F4"; fi
 
-if [[ -n $SAM10_F1 ]]; then SAM10_F=         "$SAM10_F1"; fi
+if [[ -n $SAM10_F1 ]]; then SAM10_F="$SAM10_F1"         ; fi
 if [[ -n $SAM10_F2 ]]; then SAM10_F="$SAM10_F,$SAM10_F2"; fi
 if [[ -n $SAM10_F3 ]]; then SAM10_F="$SAM10_F,$SAM10_F3"; fi
 if [[ -n $SAM10_F4 ]]; then SAM10_F="$SAM10_F,$SAM10_F4"; fi
@@ -234,15 +234,15 @@ if   [[ "${poissonDispersion}"  -eq 1 ]]; then OPTIONS="${OPTIONS} --dispersion-
 
 # Parameter OPTIONS
 # JMF note: these next few line can't be working as intended.
-if [[ -z ${FRAGLENMEAN} ]]; then
+if [[ -n "${FRAGLENMEAN}" ]]; then
     OPTIONS="${OPTIONS} --frag-len-mean ${FRAGLENMEAN}"
 fi
-if [[ -z ${FRAGLENSTDEV} ]]; then
+if [[ -n " ${FRAGLENSTDEV}" ]]; then
     OPTIONS="${OPTIONS} --frag-len-std-dev ${FRAGLENSTDEV}"
 fi
 
-if [[ -n $fdr ]]     ; then OPTIONS="${OPTIONS} --FDR $fdr"    ; fi
-if [[ -n $REFSEQ_F ]]; then OPTIONS="${OPTIONS} -b ${REFSEQ_F}"; fi
+if [[ -n "$fdr" ]]     ; then OPTIONS="${OPTIONS} --FDR $fdr"    ; fi
+if [[ -n "$REFSEQ_F" ]]; then OPTIONS="${OPTIONS} -b ${REFSEQ_F}"; fi
 
 
 # and we pull the trigger...

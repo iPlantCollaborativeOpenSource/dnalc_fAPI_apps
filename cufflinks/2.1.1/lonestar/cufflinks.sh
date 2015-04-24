@@ -92,7 +92,7 @@ if [[ $compatibleHitsNorm -eq 1 && $GTF -eq 1 ]];     then OPTIONS="${OPTIONS} -
 elif [[ $totalHitsNorm -eq 1 ]];                      then OPTIONS="${OPTIONS} --total-hits-norm"; fi
 if [[ -n $libraryType ]];                             then OPTIONS="${OPTIONS} --library-type ${libraryType}"; fi
 if [[ -n $LABEL ]];                                   then OPTIONS="${OPTIONS} --label ${LABEL}"; fi
-if [[ -n $overhangTolerance3 && $GUIDE -eq 1]];       then OPTIONS="${OPTIONS} --3-overhang-tolerance ${overhangTolerance3}"; fi
+if [[ -n $overhangTolerance3 && $GUIDE -eq 1 ]];      then OPTIONS="${OPTIONS} --3-overhang-tolerance ${overhangTolerance3}"; fi
 if [[ -n $intronOverhangTolerance && $GUIDE -eq 1 ]]; then OPTIONS="${OPTIONS} --intron-overhang-tolerance ${intronOverhangTolerance}"; fi
 if [[ $noFauxReads -eq 1 && $GUIDE -eq 1 ]];          then OPTIONS="${OPTIONS} --no-faux-reads"; fi
 

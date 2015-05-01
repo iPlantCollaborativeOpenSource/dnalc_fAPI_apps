@@ -70,9 +70,9 @@ SKIPCUFFMERGE=${skipCuffmerge}
 USEGTF=${refGTF}
 
 tar zxf ./bin.tgz
-tar zxf ./R.tgz
+tar zxf ./R-3.2.0.tgz
 export PATH="$PATH:$PWD/bin"
-export PATH="$PATH:$PWD/R/bin"
+export PATH="$PATH:$PWD/R-3.2.0/bin"
 
 MANIFEST=gtf_to_merge.txt
 touch $MANIFEST
@@ -237,7 +237,7 @@ if   [[ "${poissonDispersion}"  -eq 1 ]]; then OPTIONS="${OPTIONS} --dispersion-
 if [[ -n "${FRAGLENMEAN}" ]]; then
     OPTIONS="${OPTIONS} --frag-len-mean ${FRAGLENMEAN}"
 fi
-if [[ -n " ${FRAGLENSTDEV}" ]]; then
+if [[ -n "${FRAGLENSTDEV}" ]]; then
     OPTIONS="${OPTIONS} --frag-len-std-dev ${FRAGLENSTDEV}"
 fi
 
@@ -283,5 +283,5 @@ fi
 echoerr "Done!"
 
 # rm -fr bin R tmp *.fa *.txt annotations cuffdiff_out/*db
-rm -fr bin R tmp *.gtf *.fa* *.txt *.bam annotations cuffdiff_out/*db
+rm -fr bin R-3.2.0 tmp *.gtf *.fa* *.txt *.bam annotations cuffdiff_out/*db
 

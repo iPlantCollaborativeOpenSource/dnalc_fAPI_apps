@@ -73,6 +73,7 @@ tar zxf ./bin.tgz
 tar zxf ./R-3.2.0.tgz
 export PATH="$PATH:$PWD/bin"
 export PATH="$PATH:$PWD/R-3.2.0/bin"
+export R_LOCAL=$PWD/R-3.2.0
 
 MANIFEST=gtf_to_merge.txt
 touch $MANIFEST

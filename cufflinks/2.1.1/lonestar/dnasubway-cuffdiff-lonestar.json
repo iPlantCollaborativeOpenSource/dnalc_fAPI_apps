@@ -18,7 +18,7 @@
  "checkpointable":true,
  "tags":["next-gen","assembly","rnaseq"],
  "ontology":["http://sswapmeet.sswap.info/agave/apps/Application"],
- "modules":["purge","load TACC","load samtools/0.1.19"],
+ "modules":["purge","load TACC","swap intel gcc/4.4.5", "load sqlite", "load samtools/0.1.19"],
  "inputs":[
     {"id":"query1",
      "details":

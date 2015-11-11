@@ -1,0 +1,50 @@
+{
+  "name": "dnasubway-fastqc-aws-us-west-1",
+  "label": "DNASubway FastQC",
+  "version": "0.11.2.0",
+  "helpURI": "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/",
+  "defaultQueue": "all.q",
+  "defaultNodeCount": 1,
+  "defaultProcessorsPerNode": 12,
+  "defaultRequestedTime": "02:00:00",
+  "available":true,
+  "checkpointable":false,
+  "executionType": "HPC",
+  "executionSystem": "dnasubway-cfncluster.us-west-1.compute.amazonaws.com",
+  "parallelism": "SERIAL",
+  "deploymentPath": "vaughn/applications/dnasubway/fastqc/0.11.2/aws-docker-cfncluster",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "shortDescription": "A Quality Control application for FastQ files",
+  "author": "Cornel Ghiban; LS4 port by James Carson",
+  "templatePath": "fastqc.template",
+  "testPath": "test-fastqc.sh",
+  "tags": ["next-gen"],
+  "ontology":["http://sswapmeet.sswap.info/agave/apps/Application"],
+  "checkpointable": false,
+  "modules": [ "purge", "load TACC", "load java64/1.7.0" ],
+  "inputs": [
+    {
+      "id": "input",
+      "details": {
+        "label": "FASTQ sequence file",
+        "showAttribute": false
+      },
+      "semantics": {
+        "minCardinality": 1,
+        "ontology": [
+          "http://sswapmeet.sswap.info/util/Sequence"
+        ],
+        "fileTypes": [
+          "fastq-0"
+        ]
+      },
+      "value": {
+        "default": "agave://data.iplantcollaborative.org/shared/iplantcollaborative/example_data/fastqc/SRR070572_hy5.fastq",
+        "required": true,
+        "visible": true
+      }
+    }
+  ],
+  "parameters": [],
+  "outputs": []
+}

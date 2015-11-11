@@ -1,0 +1,13 @@
+# Set up
+. ./_common_begin.sh
+
+# inputs
+SEQ1="${input}"
+mkdir fastqc_out
+$DOCKER_APP_RUN FastQC/fastqc --quiet -f fastq -o fastqc_out "$SEQ1"
+
+# Cleanup
+rm "$SEQ1"
+
+# Teardown
+. ./_common_end.sh

@@ -8,12 +8,13 @@ ENV _AUTHOR Matthew Vaughn
 ENV _LICENSE MIT
 ENV _VERSION 0.0.1
 
-# Basics
-RUN yum -y install wget which bzip2
-# JDK 1.7.0
-RUN yum -y install java-1.7.0-openjdk.x86_64
 # Set up /opt
 RUN mkdir -p /opt/bin && echo "PATH=\$PATH:/opt/bin" >> ~/.bashrc && source ~/.bashrc
+
+# Basics
+RUN yum -y install wget which bzip2 java-1.7.0-openjdk.x86_64
+# JDK 1.7.0
+RUN yum -y install java-1.7.0-openjdk.x86_64
 
 # Install git as per https://gist.github.com/eddarmitage/2001099
 RUN wget --no-check-certificate http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
@@ -31,23 +32,22 @@ RUN cd /tmp && wget --no-check-certificate http://pypi.python.org/packages/sourc
 
 # Install R 3.2.1
 RUN yum -y install readline-devel sqlite
-RUN cd /tmp && wget --no-check-certificate "https://cran.r-project.org/src/base/R-3/R-3.2.1.tar.gz" && tar -zxvf R-3.2.1.tar.gz && cd R-3.2.1 && ./configure --prefix=/opt --with-x=no && make && make install
+RUN cd /tmp && wget --no-check-certificate "https://cran.r-project.org/src/base/R-3/R-3.2.1.tar.gz" && tar -zxvf R-3.2.1.tar.gz && cd R-3.2.1 && ./configure --prefix=/opt --with-x=no && make && make install && cd /tmp && rm -rf /tmp/*
 # Install BioC and cummerbund
 # These are not identical to the ones on Lonestar or in the bundle
 RUN echo -e "source(\"http://bioconductor.org/biocLite.R\");\nbiocLite();\nbiocLite(c(\"cummeRbund\"));" > bio.R
 RUN /opt/bin/Rscript bio.R
 
 # Install Samtools 0.1.19
-RUN cd /tmp && wget --no-check-certificate "http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2" && tar -jxvf samtools-0.1.19.tar.bz2 && cd samtools-0.1.19 && make && cp samtools /opt/bin/ && cp bcftools/bcftools /opt/bin/ && cp misc/* /opt/bin/
+RUN cd /tmp && wget --no-check-certificate "http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2" && tar -jxvf samtools-0.1.19.tar.bz2 && cd samtools-0.1.19 && make && cp samtools /opt/bin/ && cp bcftools/bcftools /opt/bin/ && cp misc/* /opt/bin/ && cd /tmp && rm -rf /tmp/*
 
 # Install FASTX_toolkit
-RUN cd /tmp && wget --no-check-certificate "http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2" && tar -jxvf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 && mv bin/* /opt/bin/
+RUN cd /tmp && wget --no-check-certificate "http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2" && tar -jxvf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 && mv bin/* /opt/bin/ && cd /tmp && rm -rf /tmp/*
 
 # Install Picard 1.107
 # Set TACC_PICARD_DIR for compatibility
-RUN cd /tmp && wget -O picard-tools-1.120.zip "https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip" && unzip picard-tools-1.120.zip && cp -R picard-tools-1.120 /opt && echo "TACC_PICARD_DIR=/opt/picard-tools-1.120; export PICARD_DIR" >> ~/.bashrc
+RUN cd /tmp && wget -O picard-tools-1.120.zip "https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip" && unzip picard-tools-1.120.zip && cp -R picard-tools-1.120 /opt && echo "export TACC_PICARD_DIR=/opt/picard-tools-1.120" >> ~/.bashrc && cd /tmp && rm -rf /tmp/*
 
 # All done
 RUN rm -rf /tmp/*
 
-WORKDIR /

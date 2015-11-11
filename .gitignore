@@ -1,6 +1,5 @@
 *.swp
 *.tgz
-*~
 */test/*
 */stampede/bin/
 */stampede/test

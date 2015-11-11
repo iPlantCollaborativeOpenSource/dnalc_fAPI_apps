@@ -1,0 +1,11 @@
+# Init
+source _common_begin.sh
+
+# inputs
+SEQ1="${input}"
+mkdir fastqc_out
+FastQC/fastqc --quiet -f fastq -o fastqc_out "$SEQ1"
+
+# Cleanup
+rm "$SEQ1"
+source _common_end.sh

@@ -3,7 +3,7 @@ FROM centos:centos5
 WORKDIR /home
 MAINTAINER Matthew Vaughn <vaughn@tacc.utexas.edu>
 
-ENV _APP DNALC Lonestar4 Compatibility Image
+ENV _APP DNALC Lonestar4 runtime environment
 ENV _AUTHOR Matthew Vaughn
 ENV _LICENSE MIT
 ENV _VERSION 0.0.1

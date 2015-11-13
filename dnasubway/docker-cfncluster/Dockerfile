@@ -6,14 +6,14 @@ RUN git clone https://github.com/iPlantCollaborativeOpenSource/dnalc_fAPI_apps.g
 ENV DNASUB_SCRIPTS /opt/scripts
 
 # Install Samtools 0.1.19
-RUN cd /tmp && wget --no-check-certificate "http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2" && tar -jxvf samtools-0.1.19.tar.bz2 && cd samtools-0.1.19 && make && cp samtools /opt/bin/ && cp bcftools/bcftools /opt/bin/ && cp misc/* /opt/bin/ && cd /tmp && rm -rf /tmp/* && chmod -R a+rx /opt/scripts/bin/*
+RUN cd /tmp && wget --no-check-certificate "http://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.1.19.tar.bz2" && tar -jxvf samtools-0.1.19.tar.bz2 && cd samtools-0.1.19 && make && cp samtools /opt/bin/ && cp bcftools/bcftools /opt/bin/ && cp misc/* /opt/bin/ && cd /tmp && rm -rf /tmp/* && chmod -R a+rx /opt/bin/*
 
 # Install FASTX_toolkit
 RUN cd /tmp && wget --no-check-certificate "http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2" && tar -jxvf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 && mv bin/* /opt/bin/ && cd /tmp && rm -rf /tmp/*
 
 # Install Picard 1.107
 # Set TACC_PICARD_DIR for compatibility
-RUN cd /tmp && wget --no-check-certificate -O picard-tools-1.120.zip "https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip" && unzip picard-tools-1.120.zip && cp -R picard-tools-1.120 /opt && echo "export TACC_PICARD_DIR=/opt/picard-tools-1.120" >> ~/.bashrc && cd /tmp && rm -rf /tmp/* && chmod -R a+r /opt/scripts/picard-tools-1.120
+RUN cd /tmp && wget --no-check-certificate -O picard-tools-1.120.zip "https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip" && unzip picard-tools-1.120.zip && cp -R picard-tools-1.120 /opt && echo "export TACC_PICARD_DIR=/opt/picard-tools-1.120" >> ~/.bashrc && cd /tmp && rm -rf /tmp/* && chmod -R a+r /opt/picard-tools-1.120
 ENV TACC_PICARD_DIR=/opt/picard-tools-1.120
 
 # Install TopHat 2.0.11.1
@@ -31,6 +31,6 @@ RUN cd /tmp && wget --no-check-certificate "http://www.bioinformatics.babraham.a
 ENV TACC_FASTQC_DIR=/opt/FastQC
 
 WORKDIR /home
-RUN chmod -R a+rx /opt/scripts/bin/*
+RUN chmod -R a+rx /opt/bin/*
 RUN echo "export PATH=\$PATH:/opt/bin" >> /etc/profile.d/opt-bin.sh
 

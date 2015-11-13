@@ -1,3 +1,6 @@
+# Ported to use Docker image iplantc/dnasub_apps
+# Scripts at /opt/scripts/tophat
+
 #----
 # Script for creating tar bundle of reference fasta and its index files for tophat/bowtie
 # Creates index files

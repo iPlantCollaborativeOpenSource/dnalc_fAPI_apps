@@ -12,9 +12,8 @@ RUN cd /tmp && wget --no-check-certificate "http://sourceforge.net/projects/samt
 RUN cd /tmp && wget --no-check-certificate "http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2" && tar -jxvf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2 && mv bin/* /opt/bin/ && cd /tmp && rm -rf /tmp/*
 
 # Install Picard 1.107
-# Set TACC_PICARD_DIR for compatibility
 RUN cd /tmp && wget --no-check-certificate -O picard-tools-1.120.zip "https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip" && unzip picard-tools-1.120.zip && cp -R picard-tools-1.120 /opt && echo "export TACC_PICARD_DIR=/opt/picard-tools-1.120" >> ~/.bashrc && cd /tmp && rm -rf /tmp/* && chmod -R a+r /opt/picard-tools-1.120
-ENV TACC_PICARD_DIR=/opt/picard-tools-1.120
+ENV DNASUB_PICARD_DIR=/opt/picard-tools-1.120
 
 # Install TopHat 2.0.11.1
 # https://ccb.jhu.edu/software/tophat/downloads/tophat-2.0.11.Linux_x86_64.tar.gz
@@ -28,9 +27,7 @@ RUN cd /tmp && wget --no-check-certificate "http://cole-trapnell-lab.github.io/c
 
 # Install FastQC 0.11.4
 RUN cd /tmp && wget --no-check-certificate "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.4.zip" && unzip fastqc_v0.11.4.zip && mv FastQC /opt/ && chmod -R a+rx /opt/FastQC/fastqc && cd /tmp && rm -rf /tmp/*
-ENV TACC_FASTQC_DIR=/opt/FastQC
+ENV DNASUB_FASTQC_DIR=/opt/FastQC
 
 WORKDIR /home
 RUN chmod -R a+rx /opt/bin/*
-#RUN echo "export PATH=\$PATH:/opt/bin" >> /etc/profile.d/opt-bin.sh
-ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin

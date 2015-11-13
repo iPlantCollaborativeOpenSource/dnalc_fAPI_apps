@@ -25,6 +25,9 @@ echo "username: $USER" >> docker.log
 echo "userid: $MYUID" >> docker.log
 echo "container_name: $DOCKER_APP_CONTAINER" >> docker.log
 
+# Refresh the image
+docker pull ${DOCKER_APP_IMAGE} | grep "Status" >> docker.log
+
 # Launch the app container, persist up to 24h
 DOCKER_APP_CREATE="docker run ${HOST_OPTS} -d -v `pwd`:${HOST_SCRATCH}:rw -w ${HOST_SCRATCH} --name ${DOCKER_APP_CONTAINER} ${DOCKER_APP_IMAGE} sleep ${PERSIST}"
 

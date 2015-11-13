@@ -1,6 +1,6 @@
 # Tophat align and refprep for DNA Subway
-# Binary deps come from dnasub_apps image
-# Scripts are also on that image in /opt/scripts/APPNAME
+# Ported to use Docker image iplantc/dnasub_apps
+# Scripts at /opt/scripts/tophat
 
 . $PWD/app_begin.sh
 

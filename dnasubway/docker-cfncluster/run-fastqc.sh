@@ -1,3 +1,8 @@
+# FastQC utilities for DNA Subway
+# Ported to use Docker image iplantc/dnasub_apps
+# FastQC is at /opt/FastQC/
+# Scripts at /opt/scripts/fastqc
+
 # Set up
 . $PWD/app_begin.sh
 

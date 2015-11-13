@@ -1,4 +1,3 @@
-
 export CWD=${PWD}
 export PATH="${CWD}/bin:${PATH}"
 export TMPDIR="$CWD/tmp"
@@ -13,7 +12,7 @@ fi
 export THREADS
 
 # Convenience functions
-echoerr() { echo -e "$@" 1>&2; }
+echoerr() { echo -e "$@\n" 1>&2; }
 
 # Docker
 DOCKER_APP_IMAGE=iplantc/dnasub_apps:latest

@@ -32,5 +32,5 @@ ENV TACC_FASTQC_DIR=/opt/FastQC
 
 WORKDIR /home
 RUN chmod -R a+rx /opt/bin/*
-RUN echo "export PATH=\$PATH:/opt/bin" >> /etc/profile.d/opt-bin.sh
-
+#RUN echo "export PATH=\$PATH:/opt/bin" >> /etc/profile.d/opt-bin.sh
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin

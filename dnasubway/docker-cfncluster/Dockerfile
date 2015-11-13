@@ -31,3 +31,5 @@ RUN cd /tmp && wget --no-check-certificate "http://www.bioinformatics.babraham.a
 ENV TACC_FASTQC_DIR=/opt/FastQC
 
 WORKDIR /home
+RUN echo "export PATH=\$PATH:/opt/bin" >> /etc/profile.d/opt-bin.sh
+

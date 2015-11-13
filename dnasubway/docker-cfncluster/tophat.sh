@@ -181,7 +181,7 @@ mv "$output_dir/accepted_hits_sorted.bam" "$output_dir/${realName}-${JOB}.bam"
 mv "$output_dir/accepted_hits_sorted.bam.bai" "$output_dir/${realName}-${JOB}.bam.bai"
 
 # Final steps
-$DOCKER_APP_RUN find tophat_out/ -maxdepth 1 -type f -exec md5sum {} \; > "$output_dir/MD5SUM.txt"
+find tophat_out/ -maxdepth 1 -type f -exec md5sum {} \; > "$output_dir/MD5SUM.txt"
 
 date2=$(date +"%s")
 diff=$(($date2-$date1))

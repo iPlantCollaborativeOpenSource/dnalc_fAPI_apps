@@ -32,3 +32,4 @@ ENV DNASUB_FASTQC_DIR=/opt/FastQC
 WORKDIR /home
 # Just in case
 RUN chmod -R a+rx /opt/bin/*
+

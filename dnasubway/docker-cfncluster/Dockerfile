@@ -30,4 +30,5 @@ RUN cd /tmp && wget --no-check-certificate "http://www.bioinformatics.babraham.a
 ENV DNASUB_FASTQC_DIR=/opt/FastQC
 
 WORKDIR /home
+# Just in case
 RUN chmod -R a+rx /opt/bin/*

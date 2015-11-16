@@ -1,6 +1,6 @@
 {"available":true,
  "checkpointable":false,
- "defaultProcessorsPerNode":8,
+ "defaultProcessorsPerNode":16,
  "defaultMaxRunTime":"12:00:00",
  "defaultNodeCount":1,
  "defaultQueue":"all.q",
@@ -22,7 +22,7 @@
     "rnaseq",
     "dnasubway",
     "greenline"],
- "templatePath":"tophat-refprep.sh",
+ "templatePath":"run-tophat-refprep.sh",
  "testPath":"tests/tophat-refprep-test.sh",
  "version":"2.0.11.1",
  "inputs":[

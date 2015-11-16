@@ -14,7 +14,7 @@ MYUID=$(id -u $USER)
 STAMP=$(date +%s)
 UUID=$(uuidgen -r)
 HOSTNAME=$(uname -n)
-HOST_OPTS="-u=$MYUID"
+HOST_OPTS="-u=$MYUID -m 24G"
 # Create unique but human comprehensible name for each container
 DOCKER_APP_CONTAINER="appc-${UUID}"
 PERSIST=86400

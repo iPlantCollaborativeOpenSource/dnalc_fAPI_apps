@@ -30,7 +30,7 @@ No_novel_junc=${no_novel_juncs}
 date1=$(date +"%s")
 
 # untar reference bundle
-tar -xvf ${GENOME}
+$DOCKER_APP_RUN tar -xvf ${GENOME}
 # Handle both tgz and tar archives, albeit a touch inelegantly
 ref=$(echo "$GENOME" | sed 's/.tgz//g' | sed 's/.tar//g')
 GENOME_F=${ref}.fa
@@ -53,11 +53,11 @@ QUERY1_F=$(basename ${QUERY1})
 
 if [[ "$QUERY1_F" =~ ".gz" ]]; then
     echoerr "Decompressing $QUERY1_F with gunzip"
-    gunzip $QUERY1_F;
+    $DOCKER_APP_RUN gunzip $QUERY1_F;
     QUERY1_F=${QUERY1_F//.gz/}
 elif [[ "$QUERY1_F" =~ ".bz2" ]]; then
     echoerr "Decompressing $QUERY1_F with bunzip2"
-    bunzip2 $QUERY1_F;
+    $DOCKER_APP_RUN bunzip2 $QUERY1_F;
     QUERY1_F=${QUERY1_F//.bz2/}
 fi
 
@@ -67,15 +67,15 @@ if [ "$PE" = "1" ]; then
 
     if [[ "$QUERY2_F" =~ ".gz" ]]; then
         echoerr "Decompressing $QUERY2_F with gunzip"
-        gunzip $QUERY2_F;
+        $DOCKER_APP_RUN gunzip $QUERY2_F;
         QUERY2_F=${QUERY2_F//.gz/}
     elif [[ "$QUERY2_F" =~ ".bz2" ]]; then
         echoerr "Decompressing $QUERY2_F with bunzip2"
-        bunzip2 $QUERY2_F;
+        $DOCKER_APP_RUN bunzip2 $QUERY2_F;
         QUERY2_F=${QUERY2_F//.bz2/}
     fi
 
-    $DOCKER_APP_RUN perl $DNASUB_SCRIPTS/tophat/resynch_paired_reads.pl $QUERY1_F $QUERY2_F
+    $DOCKER_APP_RUN perl /opt/scripts/tophat/resynch_paired_reads.pl $QUERY1_F $QUERY2_F
     $DOCKER_APP_RUN find2perl . -name '*_synched' -eval 'my $o=$_; $_=~s/_synched$//;rename $o, $_;'|perl
 
 fi
@@ -87,7 +87,7 @@ fi
 
 
 # Are we Sanger quals or...
-QUAL=$($DOCKER_APP_RUN perl $DNASUB_SCRIPTS/tophat/check_qual_score.pl $QUERY1_F)
+QUAL=$($DOCKER_APP_RUN perl /opt/scripts/tophat/check_qual_score.pl $QUERY1_F)
 if [[ -n $QUAL ]]; then
     echoerr "Quality scaling is $QUAL"
 fi
@@ -171,7 +171,7 @@ $DOCKER_APP_RUN samtools flagstat "$output_dir/accepted_hits_sorted.bam" > "$out
 
 realName=""
 if [ "$PE" = "1" ]; then
-    realName=$($DOCKER_APP_RUN perl $DNASUB_SCRIPTS/tophat/scripts/build_name.pl $QUERY1_F $QUERY2_F)
+    realName=$($DOCKER_APP_RUN perl /opt/scripts/tophat/scripts/build_name.pl $QUERY1_F $QUERY2_F)
 else
     name=${QUERY1_F/\.*/}
     realName=${name/_processed_reads/}
@@ -181,7 +181,7 @@ mv "$output_dir/accepted_hits_sorted.bam" "$output_dir/${realName}-${JOB}.bam"
 mv "$output_dir/accepted_hits_sorted.bam.bai" "$output_dir/${realName}-${JOB}.bam.bai"
 
 # Final steps
-find tophat_out/ -maxdepth 1 -type f -exec md5sum {} \; > "$output_dir/MD5SUM.txt"
+$DOCKER_APP_RUN find tophat_out/ -maxdepth 1 -type f -exec md5sum {} \; > $output_dir/MD5SUM.txt
 
 date2=$(date +"%s")
 diff=$(($date2-$date1))
@@ -189,7 +189,6 @@ diff=$(($date2-$date1))
 echoerr "\n$(($diff / 60)) minutes and $(($diff % 60)) seconds elapsed.\n"
 
 # Cleanup
-rm -rfv ${GENOME} ${GENOME_F}* $GTF_F *.fa *.bt2 $QUERY1_F $QUERY2_F $output_dir/accepted_hits.bam"
-
+rm -rfv ${GENOME} ${GENOME_F}* $GTF_F *.fa *.bt2 $QUERY1_F $QUERY2_F $output_dir/accepted_hits.bam
 . $CWD/app_end.sh
 

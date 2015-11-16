@@ -6,6 +6,11 @@
 # Set up
 . $PWD/app_begin.sh
 
+#if [ "$[THREADS]" -gt "${AGAVE_JOB_PROCESSORS_PER_NODE}" ];
+#then
+#  export THREADS=${AGAVE_JOB_PROCESSORS_PER_NODE}
+#fi
+
 # inputs
 SEQ1="${input}"
 mkdir -p fastqc_out

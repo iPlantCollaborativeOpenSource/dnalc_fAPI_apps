@@ -7,7 +7,7 @@
     "helpURI": "http://hannonlab.cshl.edu/fastx_toolkit/",
     "defaultQueue": "all.q",
     "defaultNodeCount": 1,
-    "defaultProcessorsPerNode": 4,
+    "defaultProcessorsPerNode": 2,
     "defaultRequestedTime": "04:00:00",
     "executionType": "HPC",
     "executionSystem":"dnasubway-cfncluster.us-west-1.compute.amazonaws.com",

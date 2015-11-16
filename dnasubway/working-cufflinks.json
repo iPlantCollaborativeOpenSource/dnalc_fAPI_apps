@@ -1,0 +1,37 @@
+{
+    "appId": "dnasubway-cufflinks-aws-us-west-1-2.1.1",
+    "archive": false,
+    "archivePath": "bughalo/archive/jobs/job-2562206168833781275-e0bd34dffff8de6-0001-007",
+    "archiveSystem": "data.iplantcollaborative.org",
+    "inputs": {
+        "BIAS_FASTA": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/genome.fas",
+        "annotation": "/shared/iplant_DNA_subway/genomes/arabidopsis_thaliana/annotation.gtf",
+        "query1": "agave://data.iplantcollaborative.org/bughalo/DNASubway/project-1033/th12210/tophat_out/295207_merged_R-th12210.bam"
+    },
+    "maxRunTime": "18:00:00",
+    "name": "cl12243",
+    "nodeCount": 1,
+    "parameters": {
+        "compatibleHitsNorm": false,
+        "gtf": false,
+        "guide_gtf": true,
+        "intronOverhangTolerance": 50,
+        "jobName": "cl12243",
+        "libraryType": "fr-firststrand",
+        "maxBundleLength": 3500000,
+        "maxIntronLength": 300000,
+        "minFragsPerTransfrag": 10,
+        "minIntronLength": 50,
+        "minIsoformFraction": "0.1",
+        "multiReadCorrect": false,
+        "noFauxReads": false,
+        "overhangTolerance": 10,
+        "overhangTolerance3": 600,
+        "preMrnaFraction": "0.15",
+        "smallAnchorFraction": "0.09",
+        "totalHitsNorm": true,
+        "trim3avgcovThresh": 10,
+        "trim3dropoffFrac": "0.1",
+        "upperQuartileNorm": false
+    }
+  }

@@ -67,7 +67,7 @@ fi
 ARGS=
 
 # are we Sanger or not?
-Q=$($DOCKER_APP_RUN perl /opt/scripts/fastx/bin/check_qual_score.pl "$infile")
+Q=$($DOCKER_APP_RUN perl /opt/scripts/fastx/check_qual_score.pl "$infile")
 
 if [[ -n $Q ]]; then
     echoerr "Quality scaling is $Q";

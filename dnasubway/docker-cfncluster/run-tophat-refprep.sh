@@ -32,7 +32,7 @@ $DOCKER_APP_RUN bowtie2-build -q ${ref} ${ref}
 
 $DOCKER_APP_RUN java -Xmx4g -jar /opt/picard-tools-1.120/CreateSequenceDictionary.jar R=${ref} O=${rb}.dict
 chmod a+rw ${ref}*
-tar -c${compress_flag}f ${rb}.${archive_extension} ${ref} ${ref}.fai ${rb}.dict ${ref}.1.bt2 ${ref}.2.bt2 ${ref}.3.bt2 ${ref}.4.bt2 ${ref}.rev.1.bt2 ${ref}.rev.2.bt2
+$DOCKER_APP_RUN tar -c${compress_flag}f ${rb}.${archive_extension} ${ref} ${ref}.fai ${rb}.dict ${ref}.1.bt2 ${ref}.2.bt2 ${ref}.3.bt2 ${ref}.4.bt2 ${ref}.rev.1.bt2 ${ref}.rev.2.bt2
 
 if [ ${cleanupParameter} ]; then echo "Cleaning up input and intermediate files"
 	rm ${ref}; rm ${ref}.fai; rm ${rb}.dict

@@ -1,0 +1,14 @@
+app_begin.sh
+app_end.sh
+docker_begin.sh
+docker_end.sh
+run-cuffdiff.sh
+run-cufflinks.sh
+run-cuffmerge.sh
+run-fastqc.sh
+run-fastx.sh
+run-tophat-refprep.sh
+run-tophat.sh
+json/*
+tests/*
+README.md
